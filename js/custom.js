@@ -1,36 +1,33 @@
 $(document).ready(function() {  
-  
-        $('#right_scroll img').click(function(){  
-  
-            var item_width = $('#carousel_ul li').outerWidth() + 10;  
-  
-            var left_indent = parseInt($('#carousel_ul').css('left')) - item_width;  
-  
-            $('#carousel_ul').animate({'left' : left_indent},{queue:false, duration:500},function(){  
-  
-                $('#carousel_ul li:last').after($('#carousel_ul li:first'));  
-  
-                $('#carousel_ul').css({'left' : '-210px'});
+  var $carousel_ul = $('#carousel_ul'), // $(this)
+      $items = $carousel_ul.find('li'),
+      item_width = $items.outerWidth() + 10,
+      index = 0;
 
-                if ($('#carousel_ul li')) === ($('#carousel_ul li:last-child')) {
+  $('#right_scroll img').click(function(){  
+    var carousel_css_left = parseInt($carousel_ul.css('left'));
+    var carousel_left = isNaN(carousel_css_left) ? 0 : carousel_css_left;
+    var left_indent = carousel_left - item_width;  
 
-                    console.log("test");
-                };
-            });  
-        });  
-  
-        $('#left_scroll img').click(function(){  
-  
-            var item_width = $('#carousel_ul li').outerWidth() + 10;  
-  
-            var left_indent = parseInt($('#carousel_ul').css('left')) + item_width;  
-  
-            $('#carousel_ul').animate({'left' : left_indent},{queue:false, duration:500},function(){  
-  
-            $('#carousel_ul li:first').before($('#carousel_ul li:last'));  
-  
-            $('#carousel_ul').css({'left' : '-210px'});  
-            });  
-  
-        });  
+    if ( index < $items.length -1) {
+      $carousel_ul.animate({'left' : left_indent}, 500);  
+      index += 1;
+    } else {
+      // loop code
+    }
   });  
+
+  $('#left_scroll img').click(function(){  
+    var carousel_css_left = parseInt($carousel_ul.css('left'));
+    var carousel_left = isNaN(carousel_css_left) ? 0 : carousel_css_left;
+    var left_indent = carousel_left + item_width;  
+    
+    if (index > 0) {
+      $carousel_ul.animate({'left' : left_indent}, 500);  
+      index -= 1;
+    } else {
+      // loop code
+    }
+
+  });  
+});  

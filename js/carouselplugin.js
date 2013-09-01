@@ -1,5 +1,6 @@
 (function($){
     $.fn.carouselplugin = function(){
+      var init = function () {
         $("#right-scroll img").click(function(){
 
             var item_width = $('#carousel-ul li').outerWidth(); 
@@ -8,9 +9,9 @@
 
 
         });
-    
+      };
 
-
+      init();
   }; 
 
 })(jQuery);

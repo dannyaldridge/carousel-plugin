@@ -1,0 +1,12 @@
+Todo list
+=========
+
+* fix the previous button,
+* store $left_scroll, etc, in variables
+* css prefix (using settings)
+* generate an id for .carousel_container
+* loop: $.clone()
+
+
+#da_carousel_container_1
+#da_carousel_container_2

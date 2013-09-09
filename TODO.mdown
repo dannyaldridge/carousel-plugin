@@ -1,11 +1,12 @@
 Todo list
 =========
 
-* fix the previous button,
-* store $left_scroll, etc, in variables
+* fix the previous button,*
+* store $left_scroll, etc, in variables/*
 * css prefix (using settings)
-* generate an id for .carousel_container
+* generate an id for .carousel_container/
 * loop: $.clone()
+* work on left right arrows
 
 
 #da_carousel_container_1
